@@ -1,7 +1,10 @@
 import unittest
+
 from browser_compare import *
 
 TESTS_FILE = "browser_compare/tests/test_contents/user-agents-success.txt"
+
+
 class TestSuccessFullBrowsers(unittest.TestCase):
     def test_successful_updates(self):
         f = open(TESTS_FILE)
@@ -52,6 +55,7 @@ class TestSuccessFullBrowsers(unittest.TestCase):
             a = BrowserCompare(line[3], line[1])
             with self.assertRaises(UADowngradedException) as cm:
                 a.compare()
- 
+
+
 if __name__ == '__main__':
     unittest.main()

@@ -3,6 +3,7 @@ from pkg_resources import parse_version
 
 __all__ = ["UAException", "UAChangedException", "UADowngradedException", "BrowserCompare"]
 
+
 class UAException(Exception):
     """ General exception for invalid user agent changes """
     def __init__(self, msg):
@@ -11,15 +12,17 @@ class UAException(Exception):
     def __str__(self):
         return repr(self.msg)
 
+
 class UAChangedException(UAException):
     """ OS / browser name changed (might be parsing error) """
     pass
 
+
 class UADowngradedException(UAException):
     pass
 
-class BrowserCompare:
 
+class BrowserCompare:
     def __init__(self, old, new):
         self.old = old
         self.new = new
@@ -56,7 +59,6 @@ class BrowserCompare:
             return
         raise UADowngradedException("%s was downgraded from %s to %s" % (param_name, old_version, new_version))
 
-
     def compare(self):
         params = ("platform", "flavor", "browser", "os")
         for param in params:
@@ -64,12 +66,11 @@ class BrowserCompare:
         return True
 
 
-
 def test_browser(old_ua, new_ua):
     print("")
     print("")
     print(old_ua)
-    print("-"*80)
+    print("-" * 80)
     print(new_ua)
 
     a = BrowserCompare(old_ua, new_ua)
@@ -83,6 +84,7 @@ def main():
         old_ua = line[1]
         new_ua = line[3]
         test_browser(old_ua, new_ua)
+
 
 if __name__ == '__main__':
     main()
