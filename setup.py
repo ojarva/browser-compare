@@ -20,7 +20,7 @@ setup(
     url = "https://github.com/ojarva/browser-compare",
     packages=['browser_compare'],
     long_description=read('README.rst'),
-    install_requires=["httpagentparser>=1.6.0"],
+    install_requires=["httpagentparser>=1.9.1"],
     download_url = "https://github.com/ojarva/browser-compare",
     bugtracker_url = "https://github.com/ojarva/browser-compare/issues",
     classifiers=[
