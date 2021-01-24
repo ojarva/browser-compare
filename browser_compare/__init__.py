@@ -66,11 +66,11 @@ class BrowserCompare:
 
 
 def test_browser(old_ua, new_ua):
-    print 
-    print 
-    print old_ua
-    print "-"*80
-    print new_ua
+    print("")
+    print("")
+    print(old_ua)
+    print("-"*80)
+    print(new_ua)
 
     a = BrowserCompare(old_ua, new_ua)
     a.compare()
