@@ -7,6 +7,7 @@ __all__ = ["UAException", "UAChangedException", "UADowngradedException", "Browse
 class UAException(Exception):
     """ General exception for invalid user agent changes """
     def __init__(self, msg):
+        super().__init__()
         self.msg = msg
 
     def __str__(self):
@@ -15,11 +16,10 @@ class UAException(Exception):
 
 class UAChangedException(UAException):
     """ OS / browser name changed (might be parsing error) """
-    pass
 
 
 class UADowngradedException(UAException):
-    pass
+    """ Browser version downgraded """
 
 
 class BrowserCompare:
